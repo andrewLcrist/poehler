@@ -91,3 +91,7 @@ td {
   margin: 0 0 20px 0;
   color: rgb(85, 117, 237);
 }
+
+.avatar {
+  width: 250px;
+}
