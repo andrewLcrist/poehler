@@ -15,6 +15,6 @@ exports.up = function(knex, Promise) {
 
 exports.down = function(knex, Promise) {
   return Promise.all([
-    knex.schema.dropTableIfExists('polls')
+    knex.schema.dropTable('polls')
   ])
 };
