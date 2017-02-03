@@ -84,6 +84,20 @@ button, .submit {
   width: 40vw;
 }
 
+.four-o-four {
+  font-size: 72px;
+  margin-left: 30px;
+}
+
+.knope-prez {
+  display: flex;
+  align-items: center;
+}
+
+.prez {
+  height: 100vh;
+}
+
 tr {
   height: 50px;
 }
