@@ -58,9 +58,13 @@ app.post('/polls', (request, response) => {
   const opt_two = request.body.opt_two
   const opt_three = request.body.opt_three
   const opt_four = request.body.opt_four
-  const url = shortid.generate()
-  helpers.postNewPoll(poll, opt_one, opt_two, opt_three, opt_four, url, response);
+  const poll_id = shortid.generate()
+  helpers.postNewPoll(poll, opt_one, opt_two, opt_three, opt_four, poll_id, response);
 })
+
+// app.post('/voteCount', (request, response) => {
+//   const [] = [], [], [], []
+// })
 
 //sockets codes
 app.locals.voteCount = [

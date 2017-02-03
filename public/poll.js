@@ -84,7 +84,6 @@ $.get(`/polls/${pollId}`, function(poll){
     $('.opt-two-text').text(poll.opt_two)
     $('.opt-three-text').text(poll.opt_three)
     $('.opt-four-text').text(poll.opt_four)
-    $('.andrew').text(blah)
   })
 })
 
