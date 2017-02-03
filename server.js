@@ -66,10 +66,6 @@ app.post('/polls', (request, response) => {
   helpers.postNewPoll(poll, opt_one, opt_two, opt_three, opt_four, poll_id, response);
 })
 
-// app.post('/voteCount', (request, response) => {
-//   const [] = [], [], [], []
-// })
-
 //sockets codes
 app.locals.voteCount = [
   [],
