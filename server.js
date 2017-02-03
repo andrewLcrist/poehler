@@ -63,24 +63,17 @@ app.post('/polls', (request, response) => {
 })
 
 //sockets codes
-const votes = {};
+app.locals.voteCount = [
+  [],
+  [],
+  [],
+  []
+]
 
-const countVotes = (votes) => {
-  const voteCount = {
-      1: 0,
-      2: 0,
-      3: 0,
-      4: 0
-  };
-
-  for (let vote in votes) {
-    voteCount[votes[vote]]++
-  }
-
-  return voteCount;
-}
 
 io.on('connection', (socket) => {
+  let voteCount = app.locals.voteCount
+
   console.log('A user has connected.', io.engine.clientsCount);
 
   io.sockets.emit('usersConnected', io.engine.clientsCount);
@@ -89,17 +82,26 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('A user has disconnected.', io.engine.clientsCount);
-    delete votes[socket.id];
-    socket.emit('voteCount', countVotes(votes));
+    delete voteCount[socket.id];
+    socket.emit('voteCount', voteCount);
     io.sockets.emit('userConnection', io.engine.clientsCount);
   });
 
-  socket.on('message', (channel, message) => {
+  socket.on('message', (channel, index, user) => {
     if (channel === 'voteCast') {
-      votes[socket.id] = message;
-      socket.emit('voteCount', countVotes(votes));
+      assignUser(user, index)
+      socket.emit('voteCount', voteCount);
     }
   });
+  function assignUser(newUser, index) {
+    votes = voteCount.map(function(selection) {
+      return selection.filter(function(user) {
+        return newUser.user_id != user.user_id
+      })
+    })
+    voteCount[index].push(newUser)
+    app.locals.votes = votes;
+  }
 });
 
 module.exports = server
