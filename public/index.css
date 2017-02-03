@@ -95,3 +95,7 @@ td {
 .avatar {
   width: 250px;
 }
+
+.vote-avatar {
+  width: 50px;
+}

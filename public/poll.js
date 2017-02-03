@@ -122,8 +122,11 @@ socket.on('voteCount', (votes) => {
 
 function getUserPicture(votes) {
   votes.forEach((user, index) => {
+    console.log(user);
+    if(user.length !== 0){
       $(`.avatar-vote-${index+1}`).prepend(
-        `<img src=${user}/>`
+        `<img class='vote-avatar' src=${user}/>`
       );
+    }
   })
 }
