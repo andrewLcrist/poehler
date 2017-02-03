@@ -117,8 +117,8 @@ for (let i = 0; i < buttons.length; i++) {
 
 socket.on('voteCount', (votes) => {
   votes.forEach((user, index) => {
-    $(`.avatar-vote-${index+1}`).empty()
     if(user.length !== 0){
+      $(`.avatar-vote-${index+1}`).empty()
       $(`.avatar-vote-${index+1}`).prepend(
         `<img class='vote-avatar' src=${user}/>`
       );
