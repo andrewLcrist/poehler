@@ -124,6 +124,7 @@ function postAvatar(votes) {
   votes.forEach((user, index) => {
     console.log(user);
     if(user.length !== 0){
+      $('.vote-avatar').remove()
       $(`.avatar-vote-${index+1}`).prepend(
         `<img class='vote-avatar' src=${user}/>`
       );
