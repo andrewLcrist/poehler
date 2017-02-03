@@ -117,10 +117,10 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 socket.on('voteCount', (votes) => {
-  getUserPicture(votes)
+  postAvatar(votes)
 });
 
-function getUserPicture(votes) {
+function postAvatar(votes) {
   votes.forEach((user, index) => {
     console.log(user);
     if(user.length !== 0){
