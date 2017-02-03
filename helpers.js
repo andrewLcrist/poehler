@@ -4,8 +4,8 @@ const database = require('knex')(configuration);
 
 module.exports = {
 
-  postNewPoll: function(poll, opt_one, opt_two, opt_three, opt_four, url, response) {
-    database('polls').insert({name: poll, opt_one: opt_one, opt_two: opt_two, opt_three: opt_three, opt_four: opt_four, url: url })
+  postNewPoll: function(poll, opt_one, opt_two, opt_three, opt_four, poll_id, response) {
+    database('polls').insert({name: poll, opt_one: opt_one, opt_two: opt_two, opt_three: opt_three, opt_four: opt_four, poll_id: poll_id })
     .then(function() {
       database('polls').select()
         .then(function(polls) {
@@ -35,5 +35,20 @@ module.exports = {
       .catch(function(error) {
         console.error(error)
       })
-  }
+  },
+
+  addVotes: function(poll_id, votes, response) {
+      database('votes').where('poll_id', poll_id).first()
+      .update({ votes: votes })
+      .returning([ 'id', 'poll_id', 'votes'])
+      .then(function() {
+        database('votes').select()
+          .then(function(url) {
+           response.status(200).json(url)
+          })
+         .catch(function(error) {
+           console.error('Nah')
+         });
+      })
+  },
 }

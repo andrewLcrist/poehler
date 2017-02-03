@@ -84,7 +84,6 @@ $.get(`/polls/${pollId}`, function(poll){
     $('.opt-two-text').text(poll.opt_two)
     $('.opt-three-text').text(poll.opt_three)
     $('.opt-four-text').text(poll.opt_four)
-    $('.andrew').text(blah)
   })
 })
 
@@ -117,8 +116,8 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 socket.on('voteCount', (votes) => {
-  $('.vote-avatar').remove()
   votes.forEach((user, index) => {
+    $(`.avatar-vote-${index+1}`).remove()
     if(user.length !== 0){
       $(`.avatar-vote-${index+1}`).prepend(
         `<img class='vote-avatar' src=${user}/>`
