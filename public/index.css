@@ -18,6 +18,7 @@ a:hover {
 img {
   display: flex;
   margin-bottom: 50px;
+  border-radius: 10px;
 }
 
 .knope {
