@@ -91,18 +91,18 @@ io.on('connection', (socket) => {
     io.sockets.emit('userConnection', io.engine.clientsCount);
   });
 
-  socket.on('message', (channel, index, user) => {
+  socket.on('message', (channel, index, user, nickname) => {
     if (channel === 'voteCast') {
-      assignUser(user, index)
+      assignUser(user, index, nickname)
       io.sockets.emit('voteCount', voteCount);
     }
-    function assignUser(newUser, index) {
+    function assignUser(avatar, index, nickname) {
       voteCount = voteCount.map(function(eachArray) {
         return eachArray.filter(function(user) {
-          return newUser.user_id != user.user_id
+          return avatar.user_id != user.user_id
         })
       })
-      voteCount[index].push(newUser)
+      voteCount[index].push({avatar, nickname})
       app.locals.voteCount = voteCount;
     }
   });

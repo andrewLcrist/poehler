@@ -4,7 +4,6 @@ const socket = io();
 const connectionCount = document.getElementById('connection-count');
 var avatar
 var nickname
-var blah
 
 $(document).ready(function() {
   $.get('/authkeys')
@@ -74,7 +73,7 @@ var show_profile_info = function(profile) {
 
 var saveAvatar = function(profile) {
   avatar = profile.picture
-  blah = profile.nickname
+  nickname = profile.nickname
 }
 
 $.get(`/polls/${pollId}`, function(poll){
@@ -84,6 +83,7 @@ $.get(`/polls/${pollId}`, function(poll){
     $('.opt-two-text').text(poll.opt_two)
     $('.opt-three-text').text(poll.opt_three)
     $('.opt-four-text').text(poll.opt_four)
+    $('.andrew').text(nickname)
   })
 })
 
@@ -111,16 +111,16 @@ const buttons = document.querySelectorAll('#choices button');
 
 for (let i = 0; i < buttons.length; i++) {
   buttons[i].addEventListener('click', function() {
-    socket.send('voteCast', i, avatar);
+    socket.send('voteCast', i, avatar, nickname);
   });
 }
 
 socket.on('voteCount', (votes) => {
   votes.forEach((user, index) => {
     if(user.length !== 0){
-      $(`.avatar-vote-${index+1}`).empty()
+      $(`.${user[0].nickname}`).remove()
       $(`.avatar-vote-${index+1}`).prepend(
-        `<img class='vote-avatar' src=${user}/>`
+        `<img class='vote-avatar ${user[0].nickname}' src=${user[0].avatar}/>`
       );
     }
   })
