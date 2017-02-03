@@ -20,8 +20,11 @@ $('.poll-submit').click(function(e) {
       opt_four: opt_four
     }
   })
-  $('.input' ).val('');
-  getPolls()
+  .then(function(response) {
+    $('.input' ).val('');
+    $('.poll-list').empty()
+    getPolls()
+    })
 })
 
 function getPolls() {
