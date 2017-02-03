@@ -37,10 +37,6 @@ app.use('/poll', (req, res) => {
   res.sendFile(__dirname + '/public/poll.html');
 });
 
-app.use(function (req, res, next) {
-  res.status(404).sendFile(__dirname + '/public/404.html')
-})
-
 app.get('/polls', (request, response) => {
   helpers.getPolls(response)
 })
