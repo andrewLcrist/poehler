@@ -90,7 +90,7 @@ io.on('connection', (socket) => {
   socket.on('message', (channel, index, user) => {
     if (channel === 'voteCast') {
       assignUser(user, index)
-      socket.emit('voteCount', voteCount);
+      io.sockets.emit('voteCount', voteCount);
     }
     function assignUser(newUser, index) {
       voteCount = voteCount.map(function(eachArray) {
