@@ -121,9 +121,9 @@ socket.on('voteCount', (votes) => {
 });
 
 function postAvatar(votes) {
+  $('.vote-avatar').remove()
   votes.forEach((user, index) => {
     if(user.length !== 0){
-      $('.vote-avatar').remove()
       $(`.avatar-vote-${index+1}`).prepend(
         `<img class='vote-avatar' src=${user}/>`
       );
