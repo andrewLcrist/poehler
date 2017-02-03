@@ -104,8 +104,8 @@ io.on('connection', (socket) => {
   });
 });
 
-app.get('*', (req, res) => {
-  res.status(404).sendFile(path.join(__dirname + '/public/', '404.html'));
-})
+// app.get('*', (req, res) => {
+//   res.status(404).sendFile(path.join(__dirname + '/public/', '404.html'));
+// })
 
 module.exports = server
