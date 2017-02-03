@@ -3,7 +3,6 @@ exports.seed = function(knex, Promise) {
   .then(() => {
     return Promise.all([
       knex('polls').insert({
-        id: 2,
         name: 'Sweet ol poll',
         opt_one: 'Option 1',
         opt_two: 'Option 2',

@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
   return Promise.all([
-    knex.schema.createTableIfNotExists('polls', function(table) {
+    knex.schema.createTable('polls', function(table) {
       table.increments('id').primary();
       table.string('name');
       table.string('opt_one');
