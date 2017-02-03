@@ -93,18 +93,15 @@ io.on('connection', (socket) => {
       socket.emit('voteCount', voteCount);
     }
     function assignUser(newUser, index) {
-      voteCount = voteCount.map(function(selection) {
-        return selection.filter(function(user) {
-          return newUser.user_id != user.user_id
+      voteCount = voteCount.map(function(eachArray) {
+        return eachArray.filter(function(user) {
+          return newUser.user_id !== user.user_id
         })
       })
       voteCount[index].push(newUser)
       app.locals.voteCount = voteCount;
     }
-
   });
-
-
 });
 
 module.exports = server
