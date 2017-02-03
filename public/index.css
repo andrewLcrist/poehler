@@ -76,7 +76,7 @@ button, .submit {
 
 }
 
-.poll-list {
+.poll-list-cont {
   display: flex;
   flex-direction: column;
   justify-content: center;
