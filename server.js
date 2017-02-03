@@ -15,6 +15,8 @@ const socketIo = require('socket.io');
 require('dotenv').config()
 const port = process.env.PORT || 3000;
 
+
+
 const server = http.createServer(app)
                  .listen(port, () => {
                     console.log(`Listening to port ${port}.`);
@@ -25,6 +27,7 @@ const io = socketIo(server);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.set('port', process.env.PORT || 3000)
 app.locals.title = 'Poehler'
 
 app.use(express.static(path.join(__dirname, '/public')))
