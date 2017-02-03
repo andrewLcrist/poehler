@@ -34,7 +34,7 @@ app.use('/form', (request, response) => {
 })
 
 app.use('/poll', (req, res) => {
-  res.sendFile(path.join(__dirname + '/public/poll.html')
+  res.sendFile(__dirname + '/public/poll.html')
 });
 
 app.get('/polls', (request, response) => {
@@ -105,7 +105,7 @@ io.on('connection', (socket) => {
 });
 
 app.get('*', (req, res) => {
-  res.status(404).sendFile(path.join(__dirname + '/public/', '404.html'));
+  res.status(404).sendFile(path.join(__dirname, '/public/', '404.html'));
 })
 
 module.exports = server
