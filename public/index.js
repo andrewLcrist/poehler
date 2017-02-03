@@ -32,7 +32,7 @@ function getPolls() {
     polls.forEach(function(poll){
       const updatedUrl = '/poll/?' + poll.id
       $('.poll-list').append(
-        `<div class="poll-container">
+        `<div class="poll-box">
         <p class="poll-name inline" >${poll.name}</p>
         <a href=${updatedUrl}>Poll link</a>
         </div>

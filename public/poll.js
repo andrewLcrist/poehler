@@ -1,5 +1,6 @@
 var pollId = window.location.href.match(/[^\/]*$/)[0]
 
+
 const socket = io();
 const connectionCount = document.getElementById('connection-count');
 var avatar
@@ -67,7 +68,7 @@ $(document).ready(function() {
 var show_profile_info = function(profile) {
    $('.nickname').text(profile.nickname);
    $('.btn-login').hide();
-   $('.avatar').attr('src', profile.picture).show();
+   $('.avatar-main').attr('src', profile.picture).show();
    $('.btn-logout').show();
 };
 
@@ -102,10 +103,6 @@ socket.on('usersConnected', (count) => {
 });
 
 const statusMessage = document.getElementById('status-message');
-
-socket.on('statusMessage', (message) => {
-  statusMessage.innerText = message;
-});
 
 const buttons = document.querySelectorAll('#choices button');
 

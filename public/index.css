@@ -16,9 +16,12 @@ a:hover {
 }
 
 img {
-  margin: auto;
   display: flex;
   margin-bottom: 50px;
+}
+
+.knope {
+  margin: auto;
 }
 
 input {
@@ -39,6 +42,10 @@ form {
   justify-content: center;
 }
 
+.titles {
+  font-size: 20px;
+}
+
 .add-poll {
   margin: 10px 0 10px 0;
 }
@@ -54,10 +61,8 @@ button, .submit {
 }
 
 .poll-container {
-  width: 480px;
-  margin: 0 0 15px 0;
-  align-items: center;
-  flex-grow: 1;
+  width: 60vw;
+  margin-top: 95px;
 }
 
 .poll-buttons {
@@ -75,6 +80,7 @@ button, .submit {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  width: 40vw;
 }
 
 tr {
@@ -92,8 +98,9 @@ td {
   color: rgb(85, 117, 237);
 }
 
-.avatar {
-  width: 250px;
+.avatar-cont {
+  height: 50px;
+  margin-bottom: 25px;
 }
 
 .vote-avatar {
@@ -109,6 +116,35 @@ td {
 
 .form-container {
   width: 60vw;
-  height: 100vh;
   margin-top: 80px;
+}
+
+.option {
+  display: flex;
+  align-items: baseline;
+  height: 50px;
+}
+
+.optbtn {
+  height: 30px;
+  width: 30px;
+}
+
+.avatar {
+  height: 75px;
+}
+
+.avatar-main {
+  width: 250px;
+}
+
+.auth {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opt-text {
+  margin-left: 10px;
 }
