@@ -35,20 +35,5 @@ module.exports = {
       .catch(function(error) {
         console.error(error)
       })
-  },
-
-  addVotes: function(poll_id, votes, response) {
-      database('votes').where('poll_id', poll_id).first()
-      .update({ votes: votes })
-      .returning([ 'id', 'poll_id', 'votes'])
-      .then(function() {
-        database('votes').select()
-          .then(function(url) {
-           response.status(200).json(url)
-          })
-         .catch(function(error) {
-           console.error('Nah')
-         });
-      })
-  },
+  }
 }
