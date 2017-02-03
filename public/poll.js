@@ -118,10 +118,6 @@ for (let i = 0; i < buttons.length; i++) {
 
 socket.on('voteCount', (votes) => {
   $('.vote-avatar').remove()
-  postAvatar(votes)
-});
-
-function postAvatar(votes) {
   votes.forEach((user, index) => {
     if(user.length !== 0){
       $(`.avatar-vote-${index+1}`).prepend(
@@ -129,4 +125,8 @@ function postAvatar(votes) {
       );
     }
   })
+});
+
+function postAvatar(votes) {
+
 }
