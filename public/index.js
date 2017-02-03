@@ -1,3 +1,7 @@
+$(document).ready( function() {
+  getPolls()
+})
+
 $('.poll-submit').click(function(e) {
   e.preventDefault()
   var poll = $('.poll-input').val()
