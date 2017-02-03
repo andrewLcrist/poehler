@@ -1,12 +1,14 @@
 body {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   color: black;
 }
 
 a {
   color: purple;
+  font-size: 20px;
 }
 
 a:hover {
@@ -14,29 +16,35 @@ a:hover {
 }
 
 img {
-  margin: 40px 0 40px 0;
+  display: flex;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+.knope {
+  margin: auto;
 }
 
 input {
   border-radius: 5px;
   height: 100%;
   text-align: center;
-}
-
-.input {
-  margin: 0 5px 0 5px;
+  margin: 3px;
 }
 
 form {
   display: flex;
+  width: 100%;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .poll-name-container {
   display: flex;
   justify-content: center;
+}
+
+.titles {
+  font-size: 20px;
 }
 
 .add-poll {
@@ -54,10 +62,8 @@ button, .submit {
 }
 
 .poll-container {
-  width: 480px;
-  margin: 0 0 15px 0;
-  align-items: center;
-  flex-grow: 1;
+  width: 60vw;
+  margin-top: 95px;
 }
 
 .poll-buttons {
@@ -71,10 +77,11 @@ button, .submit {
 }
 
 .poll-list {
-  width: 60%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 40vw;
 }
 
 tr {
@@ -86,16 +93,59 @@ td {
 }
 
 .poll-name {
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 400;
   margin: 0 0 20px 0;
   color: rgb(85, 117, 237);
 }
 
-.avatar {
-  width: 250px;
+.avatar-cont {
+  height: 50px;
+  margin-bottom: 25px;
 }
 
 .vote-avatar {
   width: 50px;
+}
+
+.form-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.form-container {
+  width: 60vw;
+  margin-top: 80px;
+}
+
+.option {
+  display: flex;
+  align-items: baseline;
+  height: 50px;
+}
+
+.optbtn {
+  height: 30px;
+  width: 30px;
+}
+
+.avatar {
+  height: 75px;
+}
+
+.avatar-main {
+  width: 250px;
+}
+
+.auth {
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.opt-text {
+  margin-left: 10px;
 }

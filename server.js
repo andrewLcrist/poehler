@@ -30,11 +30,11 @@ app.locals.title = 'Poehler'
 app.use(express.static(path.join(__dirname, '/public')))
 
 app.use('/form', (request, response) => {
-  response.sendFile(__dirname + '/public/creation.html')
+  response.sendFile(path.join(__dirname, '/public/', 'creation.html'))
 })
 
 app.use('/poll', (req, res) => {
-  res.sendFile(__dirname + '/public/poll.html');
+  res.sendFile(path.join(__dirname, '/public/', 'poll.html'));
 });
 
 app.get('/polls', (request, response) => {
@@ -61,10 +61,6 @@ app.post('/polls', (request, response) => {
   const poll_id = shortid.generate()
   helpers.postNewPoll(poll, opt_one, opt_two, opt_three, opt_four, poll_id, response);
 })
-
-// app.post('/voteCount', (request, response) => {
-//   const [] = [], [], [], []
-// })
 
 //sockets codes
 app.locals.voteCount = [
@@ -107,5 +103,9 @@ io.on('connection', (socket) => {
     }
   });
 });
+
+app.get('*', (req, res) => {
+  res.status(404).sendFile(path.join(__dirname + '/public/', '404.html'));
+})
 
 module.exports = server

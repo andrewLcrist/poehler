@@ -10,25 +10,36 @@
   <body>
     <header>
       <div class="auth">
-        <img alt="avatar" class="avatar" style="display:none;">
+        <img alt="avatar" class="avatar-main" style="display:none;">
         <p class="username">Welcome <span class="nickname"></span></p>
         <button type="submit" class="btn-login">Sign In</button>
         <button type="submit" class="btn-logout" style="display:none;">Sign Out</button>
+        <div id="connection-count"></div>
       </div>
     </header>
+    <div class='poll-container'>
     <h1 class="poll-name"></h1>
-    <div id="connection-count"></div>
-    <div id="status-message"></div>
         <div id="choices">
-          <button class="opt-one">1</button><p class="1"></p><p class="opt-one-text"></p><div class='avatar-vote-1'></div>
 
-          <button class="opt-two">2</button><p class="2"></p><p class="opt-two-text"></p><div class='avatar-vote-2'></div>
-
-          <button class="opt-three">3</button><p class="3"></p><p class="opt-three-text"></p><div class='avatar-vote-3'></div>
-
-          <button class="opt-four">4</button><p class="4"></p><p class="opt-four-text"></p><div class='avatar-vote-4'></div>
+          <div class="option">
+            <button class="opt-one optbtn">1</button><p class="1"></p><p class="opt-one-text opt-text"></p>
+          </div>
+          <div class='avatar-vote-1 avatar-cont'></div>
+          <div class="option">
+            <button class="opt-two optbtn">2</button><p class="2"></p><p class="opt-two-text opt-text"></p>
+          </div>
+          <div class='avatar-vote-2 avatar-cont'></div>
+          <div class="option">
+            <button class="opt-three optbtn">3</button><p class="3"></p><p class="opt-three-text opt-text"></p>
+          </div>
+          <div class='avatar-vote-3 avatar-cont'></div>
+          <div class="option">
+            <button class="opt-four optbtn">4</button><p class="4"></p><p class="opt-four-text opt-text"></p>
+          </div>
+          <div class='avatar-vote-4 avatar-cont'></div>
         </div>
     <div class="votes"></div>
+  </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/poll.js"></script>

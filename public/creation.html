@@ -7,20 +7,25 @@
     </head>
   </head>
   <body>
-    <img src="https://s-media-cache-ak0.pinimg.com/564x/ee/a5/cf/eea5cf3a3e242943170ff7dba117648d.jpg" height="250px"/>
-    <h1>Poehler</h1>
+    <div class="form-container">
+    <img class='knope' src="https://s-media-cache-ak0.pinimg.com/564x/ee/a5/cf/eea5cf3a3e242943170ff7dba117648d.jpg" height="250px"/>
+    <div class="form-input">
+      <p class="titles">Question</p>
     <form class="add-poll">
-      <input class="poll-input input" type='text' placeholder="Name your poll..."/>
+      <input class="poll-input input" type='text' placeholder="What's your question?"/>
     </form>
+    <p class="titles">Options</p>
     <form class="add-option">
-      1. <input class="option-input input opt-one" type="text" placeholder="Insert option here" />
-      2. <input class="option-input input opt-two" type="text" placeholder="Insert option here" />
-      3. <input class="option-input input opt-three" type="text" placeholder="Insert option here" />
-      4. <input class="option-input input opt-four" type="text" placeholder="Insert option here" />
+      <input class="option-input input opt-one" type="text" placeholder="Insert first option here" />
+      <input class="option-input input opt-two" type="text" placeholder="Insert second option here" />
+      <input class="option-input input opt-three" type="text" placeholder="Insert third option here" />
+      <input class="option-input input opt-four" type="text" placeholder="Insert fourth option here" />
       <input class="poll-submit submit" type="submit" />
     </form>
+  </div>
+</div>
     <div class="poll-list">
-
+      <h1>Polls</h1>
     </div>
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
