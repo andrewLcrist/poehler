@@ -4,6 +4,14 @@ const connectionCount = document.getElementById('connection-count');
 let avatar
 let nickname
 
+$(document).ready(function() {
+ if(localStorage.getItem('id_token') !== null) {
+   let profileData = JSON.parse(localStorage.getItem('profile'))
+   avatar = profileData.picture
+   nickname = profileData.nickname
+ }
+ })
+
 $.get(`/polls/${pollId}`, function(poll){
   poll.forEach(poll => {
     $('.poll-name').text(poll.name)

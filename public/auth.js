@@ -43,6 +43,7 @@ $(document).ready(function() {
             return alert('There was an error getting the profile: ' + err.message);
           }
           // Display user information
+          localStorage.setItem('profile', JSON.stringify(profile))
           saveAvatar(profile);
           show_profile_info(profile);
         });
@@ -63,8 +64,3 @@ let show_profile_info = function(profile) {
    $('.avatar-main').attr('src', profile.picture).show();
    $('.btn-logout').show();
 };
-
-let saveAvatar = function(profile) {
-  avatar = profile.picture
-  nickname = profile.nickname
-}
