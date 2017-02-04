@@ -98,7 +98,7 @@ io.on('connection', (socket) => {
     function assignUser(avatar, index, nickname) {
       voteCount = voteCount.map(function(eachArray) {
         return eachArray.filter(function(user) {
-          return avatar.user_id != user.user_id
+          return user.user_id != user.user_id
         })
       })
       voteCount[index].push({avatar, nickname})
