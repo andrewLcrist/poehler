@@ -48,6 +48,7 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 socket.on('voteCount', (votes) => {
+  console.log('votes', votes);
   votes.forEach((user, index) => {
     if(user.length !== 0){
       $(`.${user[0].nickname}`).remove()

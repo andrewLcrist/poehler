@@ -96,9 +96,9 @@ io.on('connection', (socket) => {
       io.sockets.emit('voteCount', voteCount);
     }
     function assignUser(avatar, index, nickname) {
-      voteCount = voteCount.map(function(eachArray) {
+      voteCount = app.locals.voteCount.map(function(eachArray) {
         return eachArray.filter(function(user) {
-          return user.user_id != user.user_id
+          return user.avatar != avatar
         })
       })
       voteCount[index].push({avatar, nickname})

@@ -44,7 +44,6 @@ $(document).ready(function() {
           }
           // Display user information
           localStorage.setItem('profile', JSON.stringify(profile))
-          saveAvatar(profile);
           show_profile_info(profile);
         });
       }
