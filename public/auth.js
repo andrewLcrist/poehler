@@ -62,4 +62,5 @@ let show_profile_info = function(profile) {
    $('.btn-login').hide();
    $('.avatar-main').attr('src', profile.picture).show();
    $('.btn-logout').show();
+   $('.poll-container').css('display', 'block')
 };
