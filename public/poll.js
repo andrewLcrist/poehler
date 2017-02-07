@@ -19,7 +19,6 @@ $.get(`/polls/${pollId}`, function(poll){
     $('.opt-two-text').text(poll.opt_two)
     $('.opt-three-text').text(poll.opt_three)
     $('.opt-four-text').text(poll.opt_four)
-    $('.andrew').text(nickname)
   })
 })
 
@@ -48,16 +47,13 @@ for (let i = 0; i < buttons.length; i++) {
 }
 
 socket.on('voteCount', (votes) => {
+  console.log(votes);
   votes.forEach((user, index) => {
-    if(user.length !== 0){
+    if(user.length){
       $(`.${user[0].nickname}`).remove()
-      $(`.avatar-vote-${index+1}`).prepend(
+      $(`.avatar-vote-${index + 1}`).prepend(
         `<img class='vote-avatar ${user[0].nickname}' src=${user[0].avatar}/>`
       );
     }
   })
 });
-
-function postAvatar(votes) {
-
-}

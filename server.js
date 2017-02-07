@@ -98,7 +98,6 @@ io.on('connection', (socket) => {
     function assignUser(avatar, index, nickname) {
       voteCount = app.locals.voteCount.map(function(eachArray) {
         return eachArray.filter(function(user) {
-          console.log('user', user);
           return avatar != user.avatar
         })
       })
